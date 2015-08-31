@@ -1,0 +1,16 @@
+net: "../../../examples/LFW_cvpr15/lfw03_exemplar.prototxt"
+test_iter: 20
+test_interval: 500
+base_lr: 0.0001
+momentum: 0.9
+weight_decay: 0.0005
+solver_type: SGD
+lr_policy: "poly"
+power: 2
+gamma: 0.1
+stepsize: 20000
+display: 10
+max_iter: 30000
+snapshot: 10000
+snapshot_prefix: "models/lfw03"
+solver_mode: GPU
