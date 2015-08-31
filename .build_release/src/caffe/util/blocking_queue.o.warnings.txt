@@ -1,0 +1,14 @@
+In file included from ./include/caffe/common.hpp:6:0,
+                 from ./include/caffe/blob.hpp:8,
+                 from ./include/caffe/data_layers.hpp:10,
+                 from src/caffe/util/blocking_queue.cpp:4:
+src/caffe/util/blocking_queue.cpp: In member function ‘T caffe::BlockingQueue<T>::pop(const string&)’:
+/home/sfliu/common_caffe/include/glog/logging.h:917:30: warning: typedef ‘INVALID_REQUESTED_LOG_SEVERITY’ locally defined but not used [-Wunused-local-typedefs]
+                              INVALID_REQUESTED_LOG_SEVERITY);           \
+                              ^
+/home/sfliu/common_caffe/include/glog/logging.h:912:73: note: in definition of macro ‘GOOGLE_GLOG_COMPILE_ASSERT’
+   typedef google::glog_internal_namespace_::CompileAssert<(bool(expr))> msg[bool(expr) ? 1 : -1]
+                                                                         ^
+src/caffe/util/blocking_queue.cpp:50:7: note: in expansion of macro ‘LOG_EVERY_N’
+       LOG_EVERY_N(INFO, 1000)<< log_on_wait;
+       ^

@@ -1,0 +1,9 @@
+You need to complie the latest caffe from http://caffe.berkeleyvision.org/
+
+Adding all files in this folder to the folder of matlab/caffe, replacing matcaffe.cpp and recomplie it.
+
+Run Face3_demo.m to obtain the 3-classes parsing result. 
+
+If you want to test other facial images, please include a shape file (e.g. shape.txt) that contains the five points positions. There are many existing tools to generate the 5pts, e.g. http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm
+
+The Helen model will be released soon.
