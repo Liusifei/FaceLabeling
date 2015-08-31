@@ -1,34 +1,20 @@
-# Caffe
+Since we change the matlab interface, you need to adapt the Makefile.config to your own machine.
 
-Caffe is a deep learning framework made with expression, speed, and modularity in mind.
-It is developed by the Berkeley Vision and Learning Center ([BVLC](http://bvlc.eecs.berkeley.edu)) and community contributors.
+Compile caffe and matlab respectively using "make all -j8" and "make matcaffe" at FaceLabeling/;
 
-Check out the [project site](http://caffe.berkeleyvision.org) for all the details like
+Run Face3_demo.m (cd FaceLabeling/matlab/caffe/lfw_cvpr15) to obtain the 3-classes parsing result. 
 
-- [DIY Deep Learning for Vision with Caffe](https://docs.google.com/presentation/d/1UeKXVgRvvxg9OUdh_UiC5G71UMscNPlvArsWER41PsU/edit#slide=id.p)
-- [Tutorial Documentation](http://caffe.berkeleyvision.org/tutorial/)
-- [BVLC reference models](http://caffe.berkeleyvision.org/model_zoo.html) and the [community model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo)
-- [Installation instructions](http://caffe.berkeleyvision.org/installation.html)
+If you want to test other facial images, please include a shape file (e.g. shape.txt) that contains the face's five points positions. 
+There are many existing tools to generate the 5pts, e.g. http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm
 
-and step-by-step examples.
+The Helen model will be released soon.
 
-[![Join the chat at https://gitter.im/BVLC/caffe](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BVLC/caffe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Please cite this work in your publications if it helps your research:
 
-Please join the [caffe-users group](https://groups.google.com/forum/#!forum/caffe-users) or [gitter chat](https://gitter.im/BVLC/caffe) to ask questions and talk about methods and models.
-Framework development discussions and thorough bug reports are collected on [Issues](https://github.com/BVLC/caffe/issues).
-
-Happy brewing!
-
-## License and Citation
-
-Caffe is released under the [BSD 2-Clause license](https://github.com/BVLC/caffe/blob/master/LICENSE).
-The BVLC reference models are released for unrestricted use.
-
-Please cite Caffe in your publications if it helps your research:
-
-    @article{jia2014caffe,
-      Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-      Journal = {arXiv preprint arXiv:1408.5093},
-      Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-      Year = {2014}
-    }
+@inproceedings{liu2015multi,
+  title={Multi-Objective Convolutional Learning for Face Labeling},
+  author={Sifei Liu and Jimei Yang and Chang Huang and Ming-Hsuan Yang},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={3451--3459},
+  year={2015}
+}
