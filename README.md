@@ -11,10 +11,9 @@ The Helen model will be released soon.
 
 Please cite this work in your publications if it helps your research:
 
-@inproceedings{liu2015multi,
-  title={Multi-Objective Convolutional Learning for Face Labeling},
-  author={Sifei Liu and Jimei Yang and Chang Huang and Ming-Hsuan Yang},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={3451--3459},
-  year={2015}
-}
+    @inproceedings{liu2015multi,
+      Author = {Sifei Liu and Jimei Yang and Chang Huang and Ming-Hsuan Yang},
+      booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+      Title = {Multi-Objective Convolutional Learning for Face Labeling},
+      Year = {2015}
+    }
