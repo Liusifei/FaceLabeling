@@ -39,7 +39,7 @@ class Solver {
     return test_nets_;
   }
   int iter() { return iter_; }
-
+  int iter_;
   // Invoked at specific points during an iteration
   class Callback {
    protected:
@@ -53,10 +53,11 @@ class Solver {
   void add_callback(Callback* value) {
     callbacks_.push_back(value);
   }
+  virtual void ApplyUpdate() = 0;
 
  protected:
   // Make and apply the update value for the current iteration.
-  virtual void ApplyUpdate() = 0;
+  //virtual void ApplyUpdate() = 0;
   // The Solver::Snapshot function implements the basic snapshotting utility
   // that stores the learned net. You should implement the SnapshotSolverState()
   // function that produces a SolverState protocol buffer that needs to be
@@ -74,7 +75,6 @@ class Solver {
   void DisplayOutputBlobs(const int net_id);
 
   SolverParameter param_;
-  int iter_;
   int current_step_;
   shared_ptr<Net<Dtype> > net_;
   vector<shared_ptr<Net<Dtype> > > test_nets_;
@@ -124,11 +124,13 @@ class SGDSolver : public Solver<Dtype> {
       : Solver<Dtype>(param_file) { PreSolve(); }
 
   const vector<shared_ptr<Blob<Dtype> > >& history() { return history_; }
+  //virtual void ComputeUpdateValue(int param_id, Dtype rate);
+  virtual void ApplyUpdate();
 
  protected:
   void PreSolve();
   Dtype GetLearningRate();
-  virtual void ApplyUpdate();
+  //virtual void ApplyUpdate();
   virtual void Normalize(int param_id);
   virtual void Regularize(int param_id);
   virtual void ComputeUpdateValue(int param_id, Dtype rate);
@@ -168,9 +170,10 @@ class AdaGradSolver : public SGDSolver<Dtype> {
       : SGDSolver<Dtype>(param) { constructor_sanity_check(); }
   explicit AdaGradSolver(const string& param_file)
       : SGDSolver<Dtype>(param_file) { constructor_sanity_check(); }
+  virtual void ComputeUpdateValue(int param_id, Dtype rate);
 
  protected:
-  virtual void ComputeUpdateValue(int param_id, Dtype rate);
+  //virtual void ComputeUpdateValue(int param_id, Dtype rate);
   void constructor_sanity_check() {
     CHECK_EQ(0, this->param_.momentum())
         << "Momentum cannot be used with AdaGrad.";

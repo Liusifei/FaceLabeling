@@ -757,10 +757,11 @@ static void backward(MEX_ARGS) {
 static void update(MEX_ARGS) {
   if (solver_->net()) {
         //LOG(INFO) << "Begin update";
-        solver_->ComputeUpdateValue();
+        //solver_->ComputeUpdateValue();
+        solver_->ApplyUpdate();
         solver_->iter_++;
         //LOG(INFO) << "Compute updated values";
-        net_->Update();
+        //net_->Update();
     //LOG(INFO) << "Network updated";    
   }
 }
