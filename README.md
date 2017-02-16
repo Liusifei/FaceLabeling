@@ -1,3 +1,5 @@
+Please check https://github.com/Liusifei/Face_Parsing_2016 for latest HELEN (11 classes) model.
+
 Since we change the matlab interface, you need to adapt the Makefile.config to your own machine.
 
 Compile caffe and matlab respectively using "make all -j8" and "make matcaffe" at FaceLabeling/;
